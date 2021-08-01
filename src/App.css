@@ -87,21 +87,50 @@
   margin: 0px;
   padding: 0px;
   outline: none;
+  padding: 20px;
 }
-.imbg-back
-{
-  height:480px;
-  width:480px;
-  position: absolute;
-  opacity: 0.4;
-  background-image: url("images/logo512.png");
-  z-index: 1;
-}
+
 .rightcontainer
 {
   height:100%;
   width: 100%;
   background:transparent;
   z-index: 2;
-  
+  display: flex;
+  bottom:10px;
 }
+
+.box
+{
+  background-color: rgba(255, 255, 255, 0.26);
+  width: 350px;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.head-name
+{
+  color: rgb(255, 251, 0);
+}
+.temp-main
+{
+  color: rgb(255, 0, 119);
+}
+
+.minmax
+{
+  padding: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.desc
+{
+  color: yellow;
+}
+
