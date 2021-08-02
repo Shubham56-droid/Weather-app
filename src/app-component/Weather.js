@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Form } from "./Form";
 //  way  to use inline  css  into react  file
 // import { div, makeStyles } from "@material-ui/core";
 
@@ -24,15 +24,15 @@ function minmaxTemp(min,max)
 {
   return(
     <h3>
-      <span className="py-4 minmax">{min}&deg; </span>
-      <span className="py-4 minmax"> {max}&deg;</span>
+      <span className="py-4 minmax">{min}&deg; min</span>
+      <span className="py-4 minmax">{max}&deg; max</span>
     </h3>
   );
 }
 
 
 
-export const Weather = () => {
+export const Weather = (props) => {
   // const classes = useStyles();
   // in  order  to use  css  we  have  to put  className={classes.component} and same  for  other.
 
@@ -43,16 +43,23 @@ export const Weather = () => {
           <div className="rightcontainer">
 
             <div className="box">
-            <h1 className="head-name">London</h1>
+            <h1 className="head-name">
+
+              {props.city},{props.country}
+
+            </h1>
             <h5 className="py-4">
-              <i class="wi wi-day-cloudy display-1"></i>
+              <i class={`wi ${props.weatherIcon} display-1`}></i>
             </h5>
-            <h1 className="py-2 temp-main">25&deg;</h1>
+            <h1 className="py-2 temp-main">{props.temp_celsius}&deg; Celsius</h1>
              {/* show  min  max  temprature */}
-             {minmaxTemp(24,19)}
+             {minmaxTemp(props.temp_min,props.temp_max)}
             
-            <h4 className="py-2 desc">Show Rain</h4>
+            <h4 className="py-2 desc">{props.description}</h4>
             </div>
+          </div>
+          <div className="leftcontainer">
+            <Form/>
           </div> 
         </div>
       </div>
