@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "./Form";
+
 //  way  to use inline  css  into react  file
 // import { div, makeStyles } from "@material-ui/core";
 
@@ -24,8 +24,8 @@ function minmaxTemp(min,max)
 {
   return(
     <h3>
-      <span className="py-4 minmax">{min}&deg; min</span>
-      <span className="py-4 minmax">{max}&deg; max</span>
+      {min?( <span className="py-4 minmax">{min}&deg; min</span>):null}
+      {max?(<span className="py-4 minmax">{max}&deg; max</span>):null}
     </h3>
   );
 }
@@ -43,24 +43,31 @@ export const Weather = (props) => {
           <div className="rightcontainer">
 
             <div className="box">
-            <h1 className="head-name">
+            <h1 className="head-name py-2">
 
-              {props.city},{props.country}
+              {props.city}  {props.country}
 
             </h1>
-            <h5 className="py-4">
+            <h5 className="py-4 icons-weath">
               <i class={`wi ${props.weatherIcon} display-1`}></i>
             </h5>
-            <h1 className="py-2 temp-main">{props.temp_celsius}&deg; Celsius</h1>
+           {props.temp_celsius?( <h1 className="py-2 temp-main">{props.temp_celsius}&deg; Celsius</h1>):null}
              {/* show  min  max  temprature */}
+             
              {minmaxTemp(props.temp_min,props.temp_max)}
             
-            <h4 className="py-2 desc">{props.description}</h4>
+             {props.description?(<h4 className="py-2 desc">{props.description}</h4>):null}
+            
+            <div className="py-3 box-2">
+            {props.pressure?(<h4>Pressure: {props.pressure} hpa</h4>):null}
+            {props.humidity?(<h4>Humidity: {props.humidity}%</h4>):null}
+            {props.windspeed?(<h4>Wind-speed: {props.windspeed} kmph</h4>):null}
+              
             </div>
+            </div>
+            
           </div>
-          <div className="leftcontainer">
-            <Form/>
-          </div> 
+          
         </div>
       </div>
     </div>
