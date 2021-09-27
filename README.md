@@ -36,6 +36,6 @@ To add a modifier, include the class you want after the icon name, which looks l
 See it all at https://erikflowers.github.io/weather-icons/.</p>
 
 <h2>Images</h2>
-<img src="./images/"/>
+<img src="./src/images/Screenshot (530).png"/>
 <h2>Link To The Webpage</h2>
-<p>click here to <a href="">visit</a> webpage</p>
+<p>click here to <a href="https://eloquent-beaver-fab029.netlify.app/">visit</a> webpage</p>
